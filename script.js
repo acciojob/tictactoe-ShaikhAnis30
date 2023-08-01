@@ -2,7 +2,7 @@
 // console.log("Hii on line 2");
 
 const gameBoard = `
-    <h1>TIC TAC TOE</h1>
+    <h1>Tic Tac Toe</h1>
     <div class="message" id="message"></div>
     <div id="board">
         <div class="row">
@@ -33,8 +33,8 @@ const startButton = document.getElementById("submit");
 const container = document.getElementsByClassName("container")[0];
 const players = document.getElementsByClassName("players")[0];
 
-const player1 = document.getElementById("player-1");
-const player2 = document.getElementById("player-2");
+const player1 = document.getElementById("player1");
+const player2 = document.getElementById("player2");
 
 let currentPlayer = player1;
 let winner = false;
@@ -201,6 +201,7 @@ let clearBoxes = () => {
         boxes[i].innerText = '';
     }
     message.innerText = `${player1.value}, you're up`;
+    winner = false;
     // debugger;
 }
 
@@ -219,8 +220,6 @@ function tieCheck() {
 }
 
 function homePage() {
-    let ticTacToe = document.getElementById("tic-tac-toe-container");
-    players.style.display = "block";
-    ticTacToe.style.display = "none";
+    location.reload(); //reloaded the webpage
 }
 
